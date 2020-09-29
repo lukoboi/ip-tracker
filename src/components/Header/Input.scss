@@ -4,35 +4,35 @@
   margin-top: 2rem;
   width: $mobile-input-width;
   display: flex;
-}
 
-.Input__input {
-  font-size: 18px;
-  border-radius: 12px 0 0 12px;
-  padding: 1rem 1.5rem;
-  outline: none;
-  border: none;
-  flex: 1;
-  box-shadow: $box-shadow;
-}
+  &__input {
+    font-size: 18px;
+    border-radius: 12px 0 0 12px;
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    flex: 1;
+    box-shadow: $box-shadow;
+  }
 
-.Input__button {
-  border-radius: 0 12px 12px 0;
-  height: 100%;
-  outline: none;
-  border: none;
-  background-color: $black;
-  padding: 0 1.3rem;
-  transition: all 0.2s;
-  box-shadow: $box-shadow;
-}
+  &__button {
+    border-radius: 0 12px 12px 0;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: $black;
+    padding: 0 1.3rem;
+    transition: all 0.2s;
+    box-shadow: $box-shadow;
+  }
 
-.Input__button:disabled {
-  background-color: $very-dark-gray;
-}
+  &__button:disabled {
+    background-color: $very-dark-gray;
+  }
 
-.Input__button:hover {
-  background-color: $dark-gray;
+  &__button:hover {
+    background-color: $dark-gray;
+  }
 }
 
 @media (min-width: $desktop-breakpoint) {
