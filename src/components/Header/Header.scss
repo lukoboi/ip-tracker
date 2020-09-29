@@ -1,11 +1,11 @@
 .Header {
   background-image: url('../../images/pattern-bg.png');
   background-repeat: no-repeat;
-  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  height: 100%;
 }
 
 .Header__heading {

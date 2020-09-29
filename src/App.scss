@@ -1,0 +1,15 @@
+.App {
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+.App__header {
+  height: 250px;
+}
+
+.App__map {
+  background-color: green;
+  flex: 1;
+}
