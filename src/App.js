@@ -6,6 +6,8 @@ import MapDisplay from './components/Map/MapDisplay';
 const App = () => {
   const [ipValue, setIpValue] = useState('');
 
+  const fetchIpData = async () => {};
+
   const onClickHandler = () => {};
 
   return (
