@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.5rem 1.6rem;
   margin-bottom: 0.4rem;
+  text-align: center;
 
   &__h2 {
     margin: 0;
@@ -25,10 +26,12 @@
 
 @media (min-width: $desktop-breakpoint) {
   .InfoBar {
-    padding: 0 0 0 1rem;
+    padding: 0 0 0 2rem;
     border-left: 1px solid #ccc;
     align-items: flex-start;
     margin-bottom: 0;
+    width: 25%;
+    text-align: left;
 
     &:first-child {
       border-left: none;
