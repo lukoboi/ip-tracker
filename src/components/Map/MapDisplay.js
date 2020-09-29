@@ -13,20 +13,16 @@ const PointerIcon = new L.Icon({
   shadowAnchor: [7, 40],
 });
 
-const MapDisplay = () => {
-  const point = {
-    lat: 51.505,
-    lng: -0.09,
-    zoom: 13,
-  };
-  const position = [point.lat, point.lng];
+const MapDisplay = ({ location }) => {
+  const { lat, lng } = location;
+  const position = [lat, lng];
 
   return (
     <Map center={position} zoom={14} className="Map">
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={position} icon={PointerIcon}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          Position is Lat: {lat} Lng: {lng}
         </Popup>
       </Marker>
     </Map>

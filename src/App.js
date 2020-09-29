@@ -30,7 +30,7 @@ const App = () => {
         onClick={onClickHandler}
         infoBars={infoBars}
       />
-      <MapDisplay />
+      <MapDisplay location={location} />
     </div>
   );
 };
