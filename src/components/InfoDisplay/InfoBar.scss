@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.InfoBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.InfoBar__h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.InfoBar__h4 {
+  color: $dark-gray;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.6rem;
+  margin: 0 0 0.5rem 0;
+}

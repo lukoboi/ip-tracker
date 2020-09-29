@@ -1,5 +1,9 @@
+@import '../../variables.scss';
+
 .Input {
   margin-top: 2rem;
+  width: $mobile-max-width;
+  display: flex;
 }
 
 .Input__input {
@@ -8,6 +12,8 @@
   padding: 1rem 1.5rem;
   outline: none;
   border: none;
+  flex: 1;
+  box-shadow: $box-shadow;
 }
 
 .Input__button {
@@ -16,8 +22,9 @@
   outline: none;
   border: none;
   background-color: #000;
-  padding: 0 1rem;
+  padding: 0 1.3rem;
   transition: all 0.2s;
+  box-shadow: $box-shadow;
 }
 
 .Input__button:hover {

@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.InfoDisplay {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  position: absolute;
+  z-index: 2000;
+  min-width: $mobile-min-width;
+  max-width: $mobile-max-width;
+  width: $mobile-max-width;
+  top: 170px;
+  box-shadow: $box-shadow;
+  padding: 1rem 0;
+}

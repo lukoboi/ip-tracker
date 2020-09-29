@@ -1,15 +1,11 @@
+@import './variables.scss';
+
 .App {
   height: 100vh;
-  min-height: 650px;
+  width: 100vw;
+  min-width: $mobile-min-width;
+  min-height: $mobile-min-height;
   display: flex;
   flex-direction: column;
-}
-
-.App__header {
-  height: 250px;
-}
-
-.App__map {
-  background-color: green;
-  flex: 1;
+  color: $very-dark-gray;
 }

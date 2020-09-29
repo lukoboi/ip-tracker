@@ -7,12 +7,8 @@ import MapDisplay from './components/Map/MapDisplay';
 const App = () => {
   return (
     <div className="App">
-      <div className="App__header">
-        <Header />
-      </div>
-      <div className="App__map">
-        <MapDisplay />
-      </div>
+      <Header />
+      <MapDisplay />
     </div>
   );
 };
