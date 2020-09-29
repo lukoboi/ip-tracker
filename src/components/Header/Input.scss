@@ -2,7 +2,7 @@
 
 .Input {
   margin-top: 2rem;
-  width: $mobile-max-width;
+  width: $mobile-input-width;
   display: flex;
 }
 
@@ -21,12 +21,23 @@
   height: 100%;
   outline: none;
   border: none;
-  background-color: #000;
+  background-color: $black;
   padding: 0 1.3rem;
   transition: all 0.2s;
   box-shadow: $box-shadow;
 }
 
+.Input__button:disabled {
+  background-color: $very-dark-gray;
+}
+
 .Input__button:hover {
-  background-color: #8a8a8a;
+  background-color: $dark-gray;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .Input {
+    width: $desktop-input-width;
+    margin-top: 3rem;
+  }
 }

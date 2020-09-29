@@ -1,10 +1,20 @@
 // Sizes
 $mobile-max-width: 330px;
-$mobile-min-width: 280px;
 $mobile-min-height: 650px;
-$mobile-header-height: 290px;
+
+$desktop-breakpoint: 1050px;
+
+$header-height: 290px;
+
+$mobile-input-width: 330px;
+$desktop-input-width: 500px;
+
+$mobile-info-display-width: 330px;
+$desktop-info-display-width: 1000px;
 
 // Colours
+$white: #fff;
+$black: #000;
 $dark-gray: hsl(0, 0%, 59%);
 $very-dark-gray: hsl(0, 0%, 17%);
 
