@@ -16,6 +16,7 @@ const Input = ({ ipValue, setIpValue, onClick }) => {
         className="Input__button"
         onClick={onClick}
         disabled={ipValue === ''}
+        data-testid="InputButton"
       >
         <ArrowIcon />
       </button>

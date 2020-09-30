@@ -13,18 +13,29 @@ const PointerIcon = new L.Icon({
   shadowAnchor: [7, 40],
 });
 
-const MapDisplay = ({ location }) => {
+const MapDisplay = ({ location = { lat: 0, lng: 0 } }) => {
+  let zoom = 14;
+  let showPopup = true;
   const { lat, lng } = location;
+
+  // means location has not been entered
+  if (lat === 0 && lng === 0) {
+    zoom = 1;
+    showPopup = false;
+  }
+
   const position = [lat, lng];
 
   return (
-    <Map center={position} zoom={14} className="Map">
+    <Map center={position} zoom={zoom} className="Map">
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Marker position={position} icon={PointerIcon}>
-        <Popup>
-          Position is Lat: {lat} Lng: {lng}
-        </Popup>
-      </Marker>
+      {showPopup && (
+        <Marker position={position} icon={PointerIcon}>
+          <Popup>
+            Position is Lat: {lat} Lng: {lng}
+          </Popup>
+        </Marker>
+      )}
     </Map>
   );
 };

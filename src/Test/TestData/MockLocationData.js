@@ -1,4 +1,4 @@
-export const IP_DATA = {
+export const LOCATION_DATA = {
   ip: '8.8.8.8',
   location: {
     country: 'US',

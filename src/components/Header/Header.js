@@ -5,7 +5,7 @@ import Input from './Input';
 
 const Header = ({ ipValue, setIpValue, onClick, infoBars }) => {
   return (
-    <div className="Header">
+    <div className="Header" data-testid="Header">
       <header className="Header__header">
         <h1 className="Header__heading">IP Address Tracker</h1>
         <Input ipValue={ipValue} setIpValue={setIpValue} onClick={onClick} />

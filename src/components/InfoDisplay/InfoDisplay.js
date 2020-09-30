@@ -2,9 +2,11 @@ import React from 'react';
 import InfoBar from './InfoBar';
 import './InfoDisplay.scss';
 
-const InfoDisplay = ({ infoBars }) => {
+const InfoDisplay = ({ infoBars = [] }) => {
+  if (infoBars.length === 0) return null;
+
   return (
-    <div className="InfoDisplay">
+    <div className="InfoDisplay" data-testid="InfoDisplay">
       {infoBars.map(({ title, value }) => (
         <InfoBar key={title} title={title} text={value} />
       ))}
