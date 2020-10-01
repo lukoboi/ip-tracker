@@ -1,14 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 import { IP_CURRENT_ENDPOINT, IP_LOCATION_ENDPOINT } from '../config';
 import { extractIpData } from '../helpers/transformData';
+import { useIpLocationReducer } from './useIpLocationReducer';
 
 const useIpLocation = () => {
-  const [startLoading, setStartLoading] = useState(true);
-  const [startError, setStartError] = useState(null);
+  const initialState = {
+    startLoading: true,
+    startError: null,
+    loadingLocation: false,
+    locationError: null,
+    locationData: null,
+    getIpLocationData: null,
+  };
 
-  const [loadingLocation, setLoadingLocation] = useState(false);
-  const [locationError, setLocationError] = useState(null);
-  const [locationData, setLocationData] = useState(null);
+  const [
+    { startLoading, startError, loadingLocation, locationError, locationData },
+    dispatch,
+  ] = useReducer(useIpLocationReducer, initialState);
 
   const fetchCurrentIp = () =>
     fetch(`${IP_CURRENT_ENDPOINT}?format=json`).then((res) => res.json());
@@ -19,8 +27,7 @@ const useIpLocation = () => {
     ).then((res) => res.json());
 
   const getIpLocationData = async (ipAddress) => {
-    setLoadingLocation(true);
-    setLocationError(null);
+    dispatch({ type: 'ON_FETCH_LOCATION_BEGIN' });
     try {
       const locationResponse = await fetchIpLocation(ipAddress);
 
@@ -28,23 +35,25 @@ const useIpLocation = () => {
         throw new Error('Incorrect IP address');
 
       const extractedLocationData = extractIpData(locationResponse);
-      setLocationData(extractedLocationData);
+
+      dispatch({
+        type: 'ON_FETCH_LOCATION_SUCCESS',
+        locationData: extractedLocationData,
+      });
     } catch (error) {
-      setLocationError(error.message);
+      dispatch({ type: 'ON_FETCH_LOCATION_FAILURE', message: error.message });
     }
-    setLoadingLocation(false);
   };
 
   const onStartUp = async () => {
-    setStartError(null);
-    setStartLoading(true);
+    dispatch({ type: 'ON_START_UP_BEGIN' });
     try {
       const { ip } = await fetchCurrentIp();
       getIpLocationData(ip);
     } catch (error) {
-      setStartError(error.message);
+      dispatch({ type: 'ON_START_FAILURE', message: error.message });
     }
-    setStartLoading(false);
+    dispatch({ type: 'ON_START_UP_SUCCESS' });
   };
 
   useEffect(() => {

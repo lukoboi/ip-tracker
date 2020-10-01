@@ -68,11 +68,9 @@ describe('when <App /> renders', () => {
       const Input = await waitForElement(() =>
         getByPlaceholderText(/enter an ip address/i)
       );
-
       userEvent.type(Input, '8.8.8.8');
 
       const Button = getByTestId('InputButton');
-
       userEvent.click(Button);
 
       const Spinner = await waitForElement(() => getByTestId('Spinner'));
