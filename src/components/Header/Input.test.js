@@ -24,6 +24,19 @@ describe('when <Input /> renders', () => {
     });
   });
 
+  describe('when the disable prop is true', () => {
+    it('should disable the input and button', () => {
+      const { getByPlaceholderText, getByRole } = render(
+        <Input disable={true} />
+      );
+      const Button = getByRole('button');
+      const InputElement = getByPlaceholderText(/enter an ip address/i);
+
+      expect(Button).toBeDisabled();
+      expect(InputElement).toBeDisabled();
+    });
+  });
+
   describe('when the ipValue is set', () => {
     const mockValue = 'abc';
 

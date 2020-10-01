@@ -31,6 +31,7 @@ const App = () => {
           setIpValue('');
         }}
         infoBars={locationData?.infoBars}
+        disableInput={startLoading || loadingLocation}
       />
       <MapDisplay location={locationData?.location} />
     </div>
