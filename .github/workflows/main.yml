@@ -22,7 +22,7 @@ jobs:
       - name: Install
         run: npm ci
       - name: Build
-        run: PATH_PREFIX=preview/${{ github.event.number }} npm run build -- --prefix-paths
+        run: PUBLIC_URL=preview/${{ github.event.number }} npm run build
       - name: Deploy
         if: success()
         uses: jakejarvis/s3-sync-action@master
