@@ -33,7 +33,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_PREVIEW_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_PREVIEW_SECRET }}
           AWS_REGION: 'eu-west-2'
-          SOURCE_DIR: 'public'
+          SOURCE_DIR: 'build'
           DEST_DIR: preview/${{ github.event.number }}
       - name: Set success deployment status
         if: success()
@@ -60,5 +60,5 @@ jobs:
         with:
           msg: |
             Deploy preview ready!
-            http://testingdeploys.s3-website.eu-west-2.amazonaws.com/preview//${{ github.event.number }}
+            http://testingdeploys.s3-website.eu-west-2.amazonaws.com/preview/${{ github.event.number }}
             built from ${{ github.sha }}
