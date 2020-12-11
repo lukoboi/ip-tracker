@@ -52,3 +52,13 @@ jobs:
           state: failure
           description: Failed to deploy preview
           context: Deploy Preview URL
+      - name: Deploy message
+        if: success()
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          msg: |
+            Deploy preview ready!
+            http://testingdeploys.s3-website.eu-west-2.amazonaws.com/preview//${{ github.event.number }}
+            built from ${{ github.sha }}
